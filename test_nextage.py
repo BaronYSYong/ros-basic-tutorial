@@ -40,6 +40,11 @@ if __name__ == '__main__':
     
     robot.setTargetPose('rarm', [0.32, -0.18, 0.06], [-3, -1.5, 3.0], tm=3)
     robot.setTargetPoseRelative('rarm', 'RARM_JOINT5', dz=0.01, tm=3)
+    setJointAngle(self, jname, angle, tm)
+    setJointAngles(self, angles, tm)
+    setJointAnglesOfGroup(self, gname, pose, tm, wait=True)
+    getJointAngles(self)
+    getCurrentPose(self, lname=None, frame_name=None)
     """
     #~ robot.goOffPose()
     robot.goInitial()
