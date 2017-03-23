@@ -26,7 +26,7 @@ $ echo $ROS_PACKAGE_PATH
 ```
   
 ### rospack
-rospack allows you to get information about packages <br>
+rospack allows you to get information about packages <br />
 Usage
  ```
 $ rospack find [package_name]
@@ -39,7 +39,7 @@ $ rospack find roscpp
 ```
 
 ### roscd
-roscd is part of the rosbash suite. It allows you to change directory (cd) directly to a package or a stack. <br>
+roscd is part of the rosbash suite. It allows you to change directory (cd) directly to a package or a stack. <br />
 Usage
  ```
 $ roscd [locationname[/subdir]]
@@ -62,7 +62,7 @@ $ roscd log
 ```
 
 ### rosls
-rosls is part of the rosbash suite. It allows you to ls directly in a package by name rather than by absolute path. <br>
+rosls is part of the rosbash suite. It allows you to ls directly in a package by name rather than by absolute path. <br />
 
 Usage 
 ```
@@ -77,7 +77,7 @@ cmake  launch  package.xml  srv
 ## Create ROS Package
 
 ### catkin_create_pkg
-catkin_create_pkg requires that you give it a package_name and optionally a list of dependencies on which that package depends <br>
+catkin_create_pkg requires that you give it a package_name and optionally a list of dependencies on which that package depends <br />
 Usage:
 ```
 $ catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
@@ -98,7 +98,7 @@ Build the packages in the catkin workspace
 $ cd ~/catkin_ws
 $ catkin_make
 ```
-After the workspace has been built it has created a similar structure in the devel subfolder as you usually find under /opt/ros/$ROSDISTRO_NAME. <br>
+After the workspace has been built it has created a similar structure in the devel subfolder as you usually find under /opt/ros/$ROSDISTRO_NAME. <br />
 
 To add the workspace to your ROS environment you need to source the generated setup file
 ```
