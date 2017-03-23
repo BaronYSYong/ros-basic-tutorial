@@ -1,29 +1,42 @@
-# README #
+# README 
 
-This README would normally document whatever steps are necessary to get your application up and running.
+## Create ROS Workspace
+* Ensure that environment variables like ROS_ROOT and ROS_PACKAGE_PATH are set
+```
+$ printenv | grep ROS
+```
 
-### What is this repository for? ###
+```
+ROS_ROOT=/opt/ros/indigo/share/ros
+ROS_PACKAGE_PATH=/opt/ros/indigo/share:/opt/ros/indigo/stacks
+ROS_MASTER_URI=http://localhost:11311
+ROSLISP_PACKAGE_DIRECTORIES=
+ROS_DISTRO=indigo
+ROS_ETC_DIR=/opt/ros/indigo/etc/ros
+```
 
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
+```
+$ mkdir -p ~/catkin_ws/src
+$ cd ~/catkin_ws/src
+$ cd ~/catkin_ws/
+$ catkin_make
+```
 
-### How do I get set up? ###
+```
+$ source devel/setup.bash
+```
 
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+```
+$ echo $ROS_PACKAGE_PATH
+   /home/baron/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
+ ```
+  
+ * rospack command
+ Usage
+ ```
+ $ rospack find [package_name]
+ ```
+Example
+```
+$ rospack find roscpp
+```
