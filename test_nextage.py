@@ -46,7 +46,7 @@ if __name__ == '__main__':
     getJointAngles(self)
     getCurrentPose(self, lname=None, frame_name=None)
     """
-    #~ robot.goOffPose()
+    robot.goOffPose()
     robot.goInitial()
     robot.setTargetPoseRelative('larm', 'LARM_JOINT5', dp=-1, tm=1, wait=False)
     robot.setTargetPoseRelative('rarm', 'RARM_JOINT5', dp=-1, tm=1, wait=True)
