@@ -1,12 +1,9 @@
 # README 
 
-## Create ROS Workspace
+## Command
 * Ensure that environment variables like ROS_ROOT and ROS_PACKAGE_PATH are set
 ```
 $ printenv | grep ROS
-```
-
-```
 ROS_ROOT=/opt/ros/indigo/share/ros
 ROS_PACKAGE_PATH=/opt/ros/indigo/share:/opt/ros/indigo/stacks
 ROS_MASTER_URI=http://localhost:11311
@@ -24,19 +21,22 @@ $ catkin_make
 
 ```
 $ source devel/setup.bash
-```
-
-```
 $ echo $ROS_PACKAGE_PATH
-   /home/baron/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
- ```
+/home/baron/catkin_ws/src:/opt/ros/indigo/share:/opt/ros/indigo/stacks
+```
   
- * rospack command
+### rospack
+ 
  Usage
  ```
  $ rospack find [package_name]
  ```
+ 
 Example
 ```
 $ rospack find roscpp
+/opt/ros/indigo/share/roscpp
 ```
+
+### roscd
+
