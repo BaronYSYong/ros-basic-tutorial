@@ -27,12 +27,12 @@ $ echo $ROS_PACKAGE_PATH
   
 ### rospack
 rospack allows you to get information about packages  
-Usage
+Usage  
  ```
 $ rospack find [package_name]
  ```
  
-Example
+Example  
 ```
 $ rospack find roscpp
 /opt/ros/indigo/share/roscpp
@@ -40,12 +40,12 @@ $ rospack find roscpp
 
 ### roscd
 roscd is part of the rosbash suite. It allows you to change directory (cd) directly to a package or a stack.   
-Usage
+Usage  
  ```
 $ roscd [locationname[/subdir]]
  ```
  
-Example
+Example  
 ```
 $ roscd roscpp
 $ pwd
@@ -78,7 +78,7 @@ cmake  launch  package.xml  srv
 
 ### catkin_create_pkg
 catkin_create_pkg requires that you give it a package_name and optionally a list of dependencies on which that package depends <br />
-Usage:
+Usage:  
 ```
 $ catkin_create_pkg <package_name> [depend1] [depend2] [depend3]
 ```
