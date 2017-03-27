@@ -26,7 +26,8 @@ $ echo $ROS_PACKAGE_PATH
 ```
   
 ### rospack
-rospack allows you to get information about packages  
+rospack allows you to get information about packages
+
 Usage  
  ```
 $ rospack find [package_name]
@@ -39,7 +40,8 @@ $ rospack find roscpp
 ```
 
 ### roscd
-roscd is part of the rosbash suite. It allows you to change directory (cd) directly to a package or a stack.   
+roscd is part of the rosbash suite. It allows you to change directory (cd) directly to a package or a stack.
+
 Usage  
  ```
 $ roscd [locationname[/subdir]]
