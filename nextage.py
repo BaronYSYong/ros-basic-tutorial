@@ -179,3 +179,6 @@ class NEXTAGE(NextageClient, object):
             self.waitInterpolationOfGroup(gname)
         return ret
 
+if __name__ == '__main__':
+    robot = NEXTAGE()
+    robot.init()
