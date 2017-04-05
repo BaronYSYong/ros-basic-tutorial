@@ -6,6 +6,7 @@ robot.init()
 
 vision = VISION()
 
-robot.goInitial(tm=1)
-pos = vision.hold_point()
-robot.MoveHandAbsolute('rarm', pos)
+for i in range(199):
+    robot.goInitial(tm=1)
+    pos = vision.hold_point()
+    robot.MoveHandAbsolute('rarm', pos)
