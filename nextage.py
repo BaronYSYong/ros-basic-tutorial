@@ -11,6 +11,10 @@ from hrpsys.hrpsys_config import euler_from_matrix
 
 class NEXTAGE(NextageClient, object):
     def connect(cls):
+        '''!@brief
+        Modified from 
+        /opt/ros/indigo/share/nextage_ros_bridge/script/nextage.py
+        '''        
         parser = argparse.ArgumentParser(description='hiro command line interpreters')
         parser.add_argument('--host', help='corba name server hostname')
         parser.add_argument('--port', help='corba name server port number')
