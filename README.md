@@ -106,6 +106,10 @@ To add the workspace to your ROS environment you need to source the generated se
 ```
 $ . ~/catkin_ws/devel/setup.bash
 ```
+
+### Package dependencies
+
+#### First-order dependencies
 When using catkin_create_pkg earlier, a few package dependencies were provided. These first-order dependencies can now be reviewed with the rospack tool. 
 ```
 $ rospack depends1 beginner_tutorials
@@ -127,4 +131,17 @@ $ cat package.xml
   <build_depend>std_msgs</build_depend>
 ...
 </package>
+```
+
+#### Indirect dependencies
+
+In many cases, a dependency will also have its own dependencies. For instance, rospy has other dependencies. 
+```
+$ rospack depends1 rospy
+genpy
+roscpp
+rosgraph
+rosgraph_msgs
+roslib
+std_msgs
 ```
