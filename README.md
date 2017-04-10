@@ -145,3 +145,5 @@ rosgraph_msgs
 roslib
 std_msgs
 ```
+
+http://wiki.ros.org/ROS/Tutorials/BuildingPackages
