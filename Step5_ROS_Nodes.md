@@ -1,7 +1,7 @@
 # Step 5. ROS Nodes
 
 ## Overview of Graph Concepts
-![](/home/baron/bitbucket/ros-practice/publish_subscribe_concept.png) 
+![alt text](image/publish_subscribe_concept.png) 
 
 * Nodes: A node is an executable that uses ROS to communicate with other nodes.
 * Messages: ROS data type used when subscribing or publishing to a topic.
