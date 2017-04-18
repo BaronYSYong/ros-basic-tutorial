@@ -29,8 +29,6 @@ $ rosrun [package_name] [node_name]
 $ rosrun turtlesim turtlesim_node
 $ rosrun turtlesim turtlesim_node __name:=my_turtle
 $ rosrun turtlesim turtle_teleop_key
-$ rosrun rqt_graph rqt_graph
-$ rosrun rqt_plot rqt_plot
 ```
 
 ## rosnode
@@ -58,6 +56,7 @@ $ rostopic hz [topic]
 $ rostopic hz /turtle1/pose
 $ rostopic type /turtle1/cmd_vel | rosmsg show
 $ rostopic pub /turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '{linear: {x: 2.0, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
+$ rostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.0, 0.0]' '[0.0, 0.0, -1.8]'
 ```
 ## rosmsg
 ```
@@ -103,4 +102,23 @@ $ rosparam load [file_name] [namespace]
 $ rosparam dump params.yaml
 $ rosparam load params.yaml copy
 $ rosparam get /copy/background_b
+```
+
+## rqt
+```
+$ rosrun rqt_graph rqt_graph
+$ rosrun rqt_plot rqt_plot
+$ rosrun rqt_console rqt_console
+$ rosrun rqt_logger_level rqt_logger_level
+```
+
+## roslaunch
+```
+$ roslaunch beginner_tutorials turtlemimic.launch
+```
+
+## rosed
+```
+$ rosed [package_name] [filename]
+$ rosed roscpp Logger.msg
 ```
