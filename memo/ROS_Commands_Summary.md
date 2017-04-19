@@ -62,6 +62,31 @@ $ rostopic pub /turtlesim1/turtle1/cmd_vel geometry_msgs/Twist -r 1 -- '[2.0, 0.
 ```
 $ rosmsg show geometry_msgs/Twist
 $ rostopic type /turtle1/cmd_vel | rosmsg show
+$ rosmsg show beginner_tutorials/Num
+
+```
+```
+$ rosmsg -h
+rosmsg is a command-line tool for displaying information about ROS Message types.
+
+Commands:
+	rosmsg show	Show message description
+	rosmsg list	List all messages
+	rosmsg md5	Display message md5sum
+	rosmsg package	List messages in a package
+	rosmsg packages	List packages that contain messages
+
+Type rosmsg <command> -h for more detailed usage
+```
+```
+$ rosmsg show -h
+Usage: rosmsg show [options] <message type>
+
+Options:
+  -h, --help            show this help message and exit
+  -r, --raw             show raw message text, including comments
+  -b BAGFILE, --bag=BAGFILE
+                        show message from .bag file
 ```
 
 ## rosservice
@@ -121,4 +146,17 @@ $ roslaunch beginner_tutorials turtlemimic.launch
 ```
 $ rosed [package_name] [filename]
 $ rosed roscpp Logger.msg
+```
+
+## roscp
+```
+$ roscp [package_name] [file_to_copy_path] [copy_path]
+$ roscp rospy_tutorials AddTwoInts.srv srv/AddTwoInts.srv
+```
+
+## rossrv
+```
+$ rossrv show <service type>
+$ rossrv show beginner_tutorials/AddTwoInts
+$ rossrv show AddTwoInts
 ```
