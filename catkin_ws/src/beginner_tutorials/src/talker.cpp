@@ -46,7 +46,7 @@ int main(int argc, char **argv)
    */
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
 
-  ros::Rate loop_rate(2); 2 messages per second 
+  ros::Rate loop_rate(2); /// 2 messages per second 
 
   /**
    * A count of how many messages we have sent. This is used to create
@@ -61,7 +61,7 @@ int main(int argc, char **argv)
     std_msgs::String msg;
 
     std::stringstream ss;
-    ss << "hello world " << count;
+    ss << "Hello World " << count;
     msg.data = ss.str();
 
     ROS_INFO("%s", msg.data.c_str());
