@@ -165,9 +165,31 @@ target_link_libraries(talker ${catkin_LIBRARIES})
 ```
 You can invoke executables directly or you can use rosrun to invoke them. They are not placed in '<prefix>/bin' because that would pollute the PATH when installing your package to the system. If you wish for your executable to be on the PATH at installation time, you can setup an install target, see: catkin/CMakeLists.txt
 
+
+## 4. Examining the simple publisher and subscriber
+
 Now run catkin_make: 
 ```
 # In your catkin workspace
 $ catkin_make  
 ```
-
+Make sure that a roscore is up and running: 
+```
+$ roscore
+```
+Try run the command
+```
+$ rosrun beginner_tutorials talker
+```
+In a new terminal
+```
+$ rostopic list
+/chatter
+/rosout
+/rosout_agg
+$ rostopic echo /chatter
+```
+In a new terminal
+```
+$ rosrun beginner_tutorials listener
+```
