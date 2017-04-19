@@ -1,1 +1,11 @@
+*.cmake
+*.make
+*.in
 *.pyc
+*.lisp
+build/
+devel/
+install/
+.catkin_workspace
+
+
