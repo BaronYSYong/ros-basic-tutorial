@@ -156,3 +156,18 @@ add_dependencies(listener beginner_tutorials_generate_messages_cpp)
 This will create two executables, talker and listener, which by default will go into package directory of your devel space, located by default at ~/catkin_ws/devel/lib/{package name}.
 
 Note that you have to add dependencies for the executable targets to message generation targets: 
+```
+add_dependencies(talker beginner_tutorials_generate_messages_cpp)
+```
+This makes sure message headers of this package are generated before being used. If you use messages from other packages inside your catkin workspace, you need to add dependencies to their respective generation targets as well, because catkin builds all projects in parallel. As of *Groovy* you can use the following variable to depend on all necessary targets: 
+```
+target_link_libraries(talker ${catkin_LIBRARIES})
+```
+You can invoke executables directly or you can use rosrun to invoke them. They are not placed in '<prefix>/bin' because that would pollute the PATH when installing your package to the system. If you wish for your executable to be on the PATH at installation time, you can setup an install target, see: catkin/CMakeLists.txt
+
+Now run catkin_make: 
+```
+# In your catkin workspace
+$ catkin_make  
+```
+
