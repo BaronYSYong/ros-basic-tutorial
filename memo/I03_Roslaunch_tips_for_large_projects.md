@@ -6,12 +6,14 @@ A roslaunch file allows us to say all this. Given a running robot, launching the
 
 In this case, moving between physically identical robots can be done without changing the launch files at all. Even a change such as moving from the robot to a simulator can be done with only a few changes. 
 
-Install 
-```
-$ sudo sh -c 'echo "deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main" > /etc/apt/sources.list.d/ros-latest.list'
-$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 421C365BD9FF1F717815A3895523BAEEB01FA116
-$ sudo apt-get update
-$ echo "hddtemp hddtemp/daemon boolean false" | sudo debconf-set-selections
-$ apt-cache search ros-indigo-pr2-navigation
-$ sudo apt-get install ros-indigo-pr2-navigation
-```
+refer to:
+
+* http://wiki.ros.org/pr2_2dnav
+* http://wiki.ros.org/ROS/Tutorials/Roslaunch%20tips%20for%20larger%20projects
+* https://github.com/PR2/pr2_navigation_apps
+* http://wiki.ros.org/pr2_simulator/Tutorials/StartingPR2Simulation
+* http://docs.ros.org/indigo/api/moveit_tutorials/html/doc/ros_visualization/visualization_tutorial.html
+* http://wiki.ros.org/pr2_simulator/Tutorials
+* http://wiki.ros.org/simulator_gazebo/Tutorials
+* http://wiki.ros.org/navigation
+
