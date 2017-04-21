@@ -160,3 +160,21 @@ $ rossrv show <service type>
 $ rossrv show beginner_tutorials/AddTwoInts
 $ rossrv show AddTwoInts
 ```
+
+## rosbag
+```
+$ rosbag record -a
+$ rosbag info <your bagfile>
+$ rosbag info 2017-04-20-17-01-16.bag 
+$ rosbag play <your bagfile>
+$ rosbag play 2017-04-20-17-01-16.bag
+$ rosbag play -r 2 <your bagfile>
+$ rosbag record -O subset /turtle1/cmd_vel /turtle1/pose
+```
+
+## roswtf
+```
+$ roscd
+$ roswtf
+$ ROS_PACKAGE_PATH=bad:$ROS_PACKAGE_PATH roswtf
+```
