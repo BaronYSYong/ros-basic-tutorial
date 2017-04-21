@@ -178,3 +178,9 @@ $ roscd
 $ roswtf
 $ ROS_PACKAGE_PATH=bad:$ROS_PACKAGE_PATH roswtf
 ```
+
+## rosdep
+```
+$ rosdep install [package]
+$ rosdep install turtlesim
+```

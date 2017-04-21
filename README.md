@@ -11,3 +11,5 @@
 * Step09_using_rosed_to_edit_files_in_ROS.md
 * Step10_creating_ROS_msg_and_srv.md
 * 
+
+* http://wiki.ros.org/catkin/CMakeLists.txt
