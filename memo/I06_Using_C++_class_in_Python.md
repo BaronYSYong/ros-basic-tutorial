@@ -202,4 +202,98 @@ from python_bindings_tutorial._add_two_ints_wrapper_py import AddTwoInts
 ```
 
 ### Glueing everything together
-Edit the CMakeLists.txt (rosed python_bindings_tutorial CmakeLists.txt) like this: 
+Edit the CMakeLists.txt (rosed python_bindings_tutorial CMakeLists.txt) like this: 
+```
+cmake_minimum_required(VERSION 2.8.3)
+project(python_bindings_tutorial)
+
+find_package(catkin REQUIRED COMPONENTS
+  roscpp
+  roscpp_serialization
+  std_msgs
+)
+
+## Both Boost.python and Python libs are required.
+find_package(Boost REQUIRED COMPONENTS python)
+find_package(PythonLibs 2.7 REQUIRED)
+
+
+## Uncomment this if the package has a setup.py. This macro ensures
+## modules and global scripts declared therein get installed
+## See http://ros.org/doc/api/catkin/html/user_guide/setup_dot_py.html
+catkin_python_setup()
+
+###################################
+## catkin specific configuration ##
+###################################
+catkin_package(
+        INCLUDE_DIRS include
+        LIBRARIES add_two_ints _add_two_ints_wrapper_cpp
+        CATKIN_DEPENDS roscpp
+        #  DEPENDS system_lib
+)
+
+###########
+## Build ##
+###########
+
+# include Boost and Python.
+include_directories(
+        include
+        ${catkin_INCLUDE_DIRS}
+        ${Boost_INCLUDE_DIRS}
+        ${PYTHON_INCLUDE_DIRS}
+        )
+
+## Declare a cpp library
+add_library(add_two_ints src/add_two_ints.cpp)
+add_library(_add_two_ints_wrapper_cpp src/add_two_ints_wrapper.cpp)
+
+## Specify libraries to link a library or executable target against
+target_link_libraries(add_two_ints ${catkin_LIBRARIES})
+target_link_libraries(_add_two_ints_wrapper_cpp add_two_ints ${catkin_LIBRARIES} ${Boost_LIBRARIES})
+
+# Don't prepend wrapper library name with lib and add to Python libs.
+set_target_properties(_add_two_ints_wrapper_cpp PROPERTIES
+        PREFIX ""
+        LIBRARY_OUTPUT_DIRECTORY ${CATKIN_DEVEL_PREFIX}/${CATKIN_PACKAGE_PYTHON_DESTINATION}
+        )
+```
+The c++ wrapper library should be have the same name as the Python module. If the target name needs to be different for a reason, the library name can be specified with set_target_properties(_add_two_ints_wrapper_cpp PROPERTIES OUTPUT_NAME correct_library_name).
+
+The line 
+```
+catkin_python_setup()
+```
+is used to export the Python module and is associated with the file setup.py
+
+```
+$ roscd python_bindings_tutorial
+$ touch setup.py
+```
+The content of setup.py will be:
+```
+# ! DO NOT MANUALLY INVOKE THIS setup.py, USE CATKIN INSTEAD
+
+from distutils.core import setup
+from catkin_pkg.python_setup import generate_distutils_setup
+
+# fetch values from package.xml
+setup_args = generate_distutils_setup(
+    packages=['python_bindings_tutorial'],
+    package_dir={'': 'src'})
+
+setup(**setup_args)
+```
+We then build the package with catkin_make. 
+
+### Testing the binding
+```
+from std_msgs.msg import Int64
+from python_bindings_tutorial import AddTwoInts
+a = Int64(4)
+b = Int64(2)
+addtwoints = AddTwoInts()
+sum = addtwoints.add(a, b)
+print sum
+```
