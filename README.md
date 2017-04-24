@@ -1,6 +1,15 @@
 # README 
 
-ToDo
+## Build
+```
+$ cd /path/to/catkin_ws/src
+$ git clone https://BaronYong@bitbucket.org/BaronYong/ros-tutorial.git
+$ cd ..
+$ catkin_make
+$ source devel/setup.bash
+```
+
+## ToDo
 
 * http://wiki.ros.org/catkin/CMakeLists.txt
 * actionlib - The actionlib package provides a standardized interface for interfacing with preemptible tasks. This is widely used by "higher-level" packages in ROS.
