@@ -3,7 +3,7 @@
 ## Build
 ```
 $ cd /path/to/catkin_ws/src
-$ git clone https://BaronYong@bitbucket.org/BaronYong/ros-tutorial.git
+$ git clone https://github.com/BaronYSYong/ros-basic-tutorial.git
 $ cd ..
 $ catkin_make
 $ source devel/setup.bash
