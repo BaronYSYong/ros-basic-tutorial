@@ -20,3 +20,9 @@ http://wiki.ros.org/navigation
 http://moveit.ros.org/
 * ROS Industrial  
 http://wiki.ros.org/Industrial/Tutorials
+
+## Reference
+* http://robohub.org/ros-101-intro-to-the-robot-operating-system/
+* http://www.rsl.ethz.ch/education-students/lectures/ros.html
+* http://www.zagrosrobotics.com/shop/custom.aspx?recid=60
+* http://www.generationrobots.com/blog/en/2016/03/ros-robot-operating-system-2/
